@@ -1,43 +1,78 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'java'
+  id 'java'
+  id 'application'
+  id 'org.springframework.boot' version '2.3.0.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+  id 'eclipse'
+  id 'idea'
 }
-
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+repositories {
+  mavenCentral()
 }
 
-repositories {
-	mavenCentral()
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+  developmentOnly
+  runtimeClasspath {
+    extendsFrom developmentOnly
+  }
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.flywaydb:flyway-core'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	testImplementation 'org.springframework.security:spring-security-test'
+  /*
+   * Webアプリケーション
+   */
+  // Webアプリに利用する
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  // ログインやCSRF対策などのセキュリティ周りを実装する
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  // テンプレートエンジン
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  // アプリケーションサーバ
+  implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+  // OAuthを用いて認証する際に必要
+  implementation 'org.springframework.security:spring-security-oauth2-client'
+  implementation 'org.springframework.security:spring-security-oauth2-jose'
+
+  /* DB関連 */
+  // O/Rマッパー
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  // DBのマイグレーション管理に必要
+//	implementation 'org.flywaydb:flyway-core'
+  // MySQLと接続する
+//	runtimeOnly 'mysql:mysql-connector-java'
+
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+  // getter/setter/constructorなどをアノテーションのみで書けるようにする
+  annotationProcessor 'org.projectlombok:lombok'
+
+  // 静的コード解析ツール(実装保留)
+  // implementation 'checkstyle:checkstyle:5.0'
+
+  // テスト時に使う
+  testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+  }
+  testImplementation 'org.springframework.security:spring-security-test'
+}
+
+bootRun {
+  sourceResources sourceSets.main
 }
 
 test {
-    useJUnitPlatform {
-        includeTags 'fast', 'smoke & feature-a'
-        // excludeTags 'slow', 'ci'
-        includeEngines 'junit-jupiter'
-        // excludeEngines 'junit-vintage'
-    }
+  useJUnitPlatform {
+    includeTags 'fast', 'smoke & feature-a'
+    // excludeTags 'slow', 'ci'
+    includeEngines 'junit-jupiter'
+    // excludeEngines 'junit-vintage'
+  }
 }

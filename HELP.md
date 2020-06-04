@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.ari-jp.ojt.todoApp-2020' is invalid and this project uses 'com.arijp.ojt.todoApp2020' instead.
+* The original package name 'com.example.ojt.todoApp2020' is invalid and this project uses 'com.arijp.ojt.todoApp2020' instead.
 
 # Getting Started
 

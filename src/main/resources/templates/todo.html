@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <title>
+    OpenID
+    Connect
+    Sample</title>
+  <meta
+    charset="utf-8"/>
+</head>
+
+<body>
+<div>
+  名前：<span
+  sec:authentication="principal.attributes['name']"></span>
+</div>
+<div>
+  名前：<span
+  th:text="${username}"></span>
+</div>
+<div>
+  ID：<span
+  sec:authentication="principal.name"></span>
+</div>
+
+<form action="#" th:action="@{/logout}" method="post">
+  <button type="submit" value="POST" >Logout</button>
+</form>
+</body>
+</html>
