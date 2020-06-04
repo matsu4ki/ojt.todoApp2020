@@ -292,5 +292,5 @@ gradle-app.setting
 
 
 # Project setting
-**secrets.yml
+**application-secrets.yml
 /**/public/js/*
