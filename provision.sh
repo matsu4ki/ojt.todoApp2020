@@ -10,22 +10,22 @@
 #####################
 
 # locale setting
-echo '==================\nlocale setting start\n=================='
+echo '================== locale setting start =================='
 sudo dnf install -y glibc-langpack-ja
 localectl set-locale LANG=ja_JP.utf8
 localectl status
-echo '==================\nlocale setting end\n=================='
+echo '================== locale setting end =================='
 
 # 時刻の同期を行う
-echo '==================\nsync time start\n=================='
+echo '================== sync time start =================='
 date && chronyc -a makestep && date
-echo '==================\nsync time end\n=================='
+echo '================== sync time end =================='
 
 # install expect
 sudo dnf install -y expect
 
 # DB settings
-echo '==================\nmysql setting start\n=================='
+echo '================== mysql setting start =================='
 sudo dnf remove -y mariadb
 sudo dnf install -y @mysql:8.0
 sudo systemctl enable mysqld
@@ -62,4 +62,4 @@ spawn mysql -u root -p -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT
 expect \"Enter password:\"
 send  \"rootuser\n\"
 expect "
-echo '==================\nmysql setting end\n=================='
+echo '================== mysql setting end =================='

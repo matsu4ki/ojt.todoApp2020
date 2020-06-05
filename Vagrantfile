@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
     vb.name = "centos8"
     vb.cpus = 2
     vb.gui = false
-    vb.customize ["modifyvm", :id, "--memory", "4096"]
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
   config.vm.provision :shell, :path => "./provision.sh"
 end
