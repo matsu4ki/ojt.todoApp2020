@@ -2,11 +2,12 @@ server:
   port: 8080
 
 spring:
+  profile: main
   profiles.include: 'secrets' # clientIDなどはこちらに記載する
   security.oauth2.client.registration:
     facebook:
-      clientId: XXXXXXXXXXXXXXXXXXXXXX
-      clientSecret: XXXXXXXXXXXXXXXXXXXXXX
+      clientId: XXXXXXXXXXXXXXXXXXXXXX # application-secrets.ymlで上書きする
+      clientSecret: XXXXXXXXXXXXXXXXXXXXXX # application-secrets.ymlで上書きする
       accessTokenUri: https://graph.facebook.com/oauth/access_token
       userAuthorizationUri: https://www.facebook.com/dialog/oauth
       tokenName: oauth_token
@@ -14,7 +15,13 @@ spring:
       clientAuthenticationScheme: form
       resource:
         userInfoUri: https://graph.facebook.com/me
+      scope: # facebookはopenid connectをサポートしてないのでscopeにopenidを指定できない
+        - email
     google:
-      clientId: XXXXXXXXXXXXXXXXXXXXXX
-      clientSecret: XXXXXXXXXXXXXXXXXXXXXX
+      clientId: XXXXXXXXXXXXXXXXXXXXXX # application-secrets.ymlで上書きする
+      clientSecret: XXXXXXXXXXXXXXXXXXXXXX # application-secrets.ymlで上書きする
+      scope:
+        - openid
+        - profile
+        - email
   thymeleaf.cache: false
