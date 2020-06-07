@@ -1,7 +1,7 @@
 # How to Build Local Env
 
 1. Install Java 11, npm, yarn, vagrant, vurtualBox and Gradle. Gradle is Option.
-<br>(If you don't wanna install Gradle, use `./gradlew`).
+<br>(If you don't want to install Gradle, use `./gradlew`).
 2. Move to root of project.
 3. Type `vagrant up`.
 4. Type `yarn install`.
