@@ -1,20 +1,26 @@
 # ojt.todoApp2020
 
 2020 年の ojt 用に作成するサンプルアプリです。
+枯れた技術をベースに、なるべく新しいものを組み込んでいるつもり。
 
 ## 環境
 
 ### アプリケーション
 
-- java 11
-- springBoot RELEASE 2.3.0
-- gradle
-- lombok
 - editorconfig
-- yarn
-- eslint
+- BackEnd
+  - java 11
+  - springBoot RELEASE 2.3.0
+    - springSecurity
+    - spring data jpa
+  - gradle
+  - lombok
+  - flyway
+- FrontEnd
+  - yarn
+  - eslint
   - prettier
-- webpack
+  - webpack
 
 ### インフラストラクチャ
 
