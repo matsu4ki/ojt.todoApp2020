@@ -1,4 +1,6 @@
 # !/bin/sh
+# OverView
+# This script is CentOS8 initializer used by Vagrant.
 
 # upgrade packages
 # dnf updateはdnf upgradeのエイリアス
@@ -62,4 +64,10 @@ spawn mysql -u root -p -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT
 expect \"Enter password:\"
 send  \"rootuser\n\"
 expect "
+# create Database
+expect -c "
+spawn mysql -u root -p -e \"CREATE DATABASE if not exists todo\"
+expect \"Enter password:\"
+send  \"rootuser\n\"
+
 echo '================== mysql setting end =================='
