@@ -9,6 +9,9 @@
 <body>
 
 <div class="wrapper fadeInDown">
+
+  <div th:if="${message}" class="alert alert-primary" role="alert" th:text="${message}"></div>
+
   <div id="formContent">
     <!-- Tabs Titles -->
 
@@ -18,21 +21,25 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form id="loginForm" method="post" th:action=@{/signin}>
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      New to This App?<br><a class="underlineHover" th:href=@{/signup}>Create an account.</a>
     </div>
 
-    <h3>Login with:</h3>
-    <p th:each="url : ${urls}">
-      <a th:text="${url.key}" th:href="${url.value}">Client</a>
-    </p>
+    <div class="fadeIn first">
+      <h1 class="mt-4 md-5">Login with</h1>
+    </div>
+    <div class="ml-2 mr-2">
+      <p th:each="url : ${urls}">
+        <a class="btn btn-primary btn-lg btn-block" th:href="${url.value}" th:text="${url.key}" role="button"></a>
+      </p>
+    </div>
   </div>
 </div>
 

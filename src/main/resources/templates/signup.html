@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta
+    charset="UTF-8"/>
+  <title>title</title>
+</head>
+<body>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h1 class="mt-4 md-5">Create Account</h1>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" method="post" th:object="${createUserForm}" th:action=@{/signup/createuser}>
+      <input type="text" th:field="*{username}" class="fadeIn second" placeholder="username">
+      <input type="password" th:field="*{password}" class="fadeIn third" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+    </form>
+  </div>
+</div>
+
+<script
+  src="/js/index.js"></script>
+</body>
+</html>
