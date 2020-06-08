@@ -1,10 +1,11 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // 起点となるファイル
   entry: {
     index: path.join(__dirname, 'src/main/resources/src/js/index.js'),
+    login: path.join(__dirname, 'src/main/resources/src/js/login.js'),
+    create: path.join(__dirname, 'src/main/resources/src/js/create.js'),
   },
   // webpack watch したときに差分ビルドができる
   cache: true,
@@ -22,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        // コンパイルの事前に eslint による
+        // コンパイルの事前に eslint によるチェックを噛ます
         test: /\.js?$/,
         // 事前処理であることを示す
         enforce: 'pre',

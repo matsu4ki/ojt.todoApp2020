@@ -1,4 +1,4 @@
-package com.example.ojt.todoApp2020.service.login;
+package com.example.ojt.todoApp2020.component;
 
 import com.example.ojt.todoApp2020.entity.User;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,8 +8,7 @@ import java.util.Collection;
 
 /**
  * ログイン認証に必要なクラス
- *
- * @author Work
+ * org.springframework.security.core.userdetails.User が本家
  */
 public class LoginUserDetails implements UserDetails {
 

@@ -1,5 +1,7 @@
 package com.example.ojt.todoApp2020.controller;
 
+import com.example.ojt.todoApp2020.component.LoginUserDetails;
+import com.example.ojt.todoApp2020.component.SessionData;
 import com.example.ojt.todoApp2020.form.CreateUserForm;
 import com.example.ojt.todoApp2020.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,19 +21,21 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+    private static final String authorizationRequestBaseUri = "oauth2/authorization";
 
     @ModelAttribute
     CreateUserForm setupCreateUserForm() {
         return new CreateUserForm();
     }
 
-    private static final String authorizationRequestBaseUri = "oauth2/authorization";
-    Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
+    public LoginController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/login")
     public String loginPage(Model model) {
+        Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
         oauth2AuthenticationUrls.put("facebook", authorizationRequestBaseUri + "/" + "facebook");
         oauth2AuthenticationUrls.put("google", authorizationRequestBaseUri + "/" + "google");
         model.addAttribute("urls", oauth2AuthenticationUrls);

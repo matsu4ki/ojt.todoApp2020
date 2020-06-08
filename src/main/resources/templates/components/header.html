@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Todo</a>
+    <form class="form-inline" action="#" th:action="@{/logout}" method="post">
+      <button class="btn btn-outline-light btn-sm form-control mr-sm-2" type="submit" value="POST">Logout</button>
+    </form>
+  </nav>
+</body>
+</html>

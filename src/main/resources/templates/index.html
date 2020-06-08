@@ -3,30 +3,43 @@
   xmlns:th="http://www.thymeleaf.org"
   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
-  <title>
-    OpenID
-    Connect
-    Sample</title>
+  <title>TODO</title>
   <meta
     charset="utf-8"/>
 </head>
-
 <body>
-<div>
-  名前：<span
-  sec:authentication="principal.attributes['name']"></span>
-</div>
-<div>
-  名前：<span
-  th:text="${username}"></span>
-</div>
-<div>
-  ID：<span
-  sec:authentication="principal.name"></span>
+
+<header th:include="components/header"></header>
+
+<div class="container">
+  <div class="mt-5">
+    <h1>
+      <th:block th:text="${user.username}"/>のTodo
+    </h1>
+    <div>
+      <a class="btn btn-primary" th:href="@{/create}" >Todoを追加</a>
+    </div>
+  </div>
+  <hr  />
+  <div class="row">
+    <div class="col-6" th:if="${todoList.isEmpty()}">
+      <div class="alert alert-secondary" role="alert">
+        <h4 class="alert-heading">TODOがないよ！</h4>
+        <p>TODOを登録してみよう！</p>
+      </div>
+    </div>
+    <div class="col-6 shadow-sm" th:each="todo : ${todoList}">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" th:text="${todo.title}"></h5>
+          <p class="card-text" th:text="${todo.content}"></p>
+          <a href="#" class="float-right btn btn-primary card-link">タスク終了✌️</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<form action="#" th:action="@{/logout}" method="post">
-  <button type="submit" value="POST" >Logout</button>
-</form>
+<script src="/js/index.js"></script>
 </body>
 </html>
