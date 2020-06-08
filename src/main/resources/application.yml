@@ -1,6 +1,5 @@
 server:
   port: 8080
-
 spring:
   profile: main
   profiles.include: 'secrets' # clientIDなどはこちらに記載する
@@ -25,3 +24,6 @@ spring:
         - profile
         - email
   thymeleaf.cache: false
+  session:
+    store-type: jdbc
+    jdbc.initialize-schema: always

@@ -6,6 +6,7 @@ plugins {
   id 'eclipse'
   id 'idea'
   id "org.flywaydb.flyway" version "6.4.3"
+  id 'war'
 }
 
 group = 'com.example'
@@ -49,7 +50,10 @@ dependencies {
 	implementation 'org.flywaydb:flyway-core'
   // MySQLと接続する
 	runtimeOnly 'mysql:mysql-connector-java'
-
+  // springSessionをDBで利用する
+  implementation 'org.springframework.session:spring-session-jdbc'
+  implementation 'org.springframework:spring-web'
+  // debug時のホットリロード用
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
   // getter/setter/constructorなどをアノテーションのみで書けるようにする
@@ -83,4 +87,8 @@ flyway {
   url = 'jdbc:mysql://192.168.33.10:3306/todo'
   user = 'root'
   password = 'rootuser'
+}
+
+war {
+  enabled = true
 }
