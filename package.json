@@ -1,5 +1,5 @@
 {
-  "name": "ojt.todoApp2020",
+  "name": "ojt.todo-app2020",
   "version": "1.0.0",
   "description": "this is OJT application to study spring boot  for new employees for FY 2020",
   "main": "index.js",
@@ -30,7 +30,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "build": "yarn eslint --fix src/main/resources/src/js && yarn webpack",
+    "build": "yarn run fix-js && yarn webpack",
     "fix-js": "yarn eslint --fix src/main/resources/src/js"
   }
 }
