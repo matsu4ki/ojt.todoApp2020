@@ -1,7 +1,8 @@
 # TODO
 
 - TODOアプリの中身作成
-- OAuthログイン時にユーザ情報を取得する
+- OAuthログイン時にユーザ情報を取得す
+- validationを入れる
 - js in cssになっているので、cssファイルは別途出力する形にする
 - Gradleとyarn間の連携を行う
 - webpack.config.jsで、tmplateをイベントにjsを作成できるようにする
