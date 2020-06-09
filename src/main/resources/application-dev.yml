@@ -4,7 +4,7 @@ server:
 spring:
   profiles.include: 'main'
   datasource:
-    url: jdbc:mysql://192.168.33.10:3306/todo
+    url: jdbc:mysql://192.168.33.10:33306/todo
     username: root
     password: rootuser
     driverClassName: com.mysql.cj.jdbc.Driver
