@@ -7,3 +7,5 @@
 4. Type `yarn install`.
 5. Type `yarn run build`.
 6. Run App by `main\java\com\example\ojt\todoApp2020\Application.java`
+<br>If you want to use CLI, type `gradle bootRun --args='--spring.profiles.active=dev'`
+
