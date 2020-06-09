@@ -11,23 +11,27 @@
 
 ## 使用技術
 
+- editorconfig
+
 ### アプリケーション
 
-- editorconfig
-- BackEnd
-  - java 11
-  - springBoot RELEASE 2.3.0
-    - springSecurity
-    - spring data jpa
-  - gradle
-  - lombok
-  - flyway
-- FrontEnd
-  - yarn
-  - eslint
-  - prettier
-  - webpack
-  - bootstrap4
+#### バックエンド
+
+- java 11
+- springBoot RELEASE 2.3.0
+  - springSecurity
+  - spring data jpa
+- gradle
+- lombok
+- flyway
+
+#### フロントエンド
+
+- yarn
+- eslint
+- prettier
+- webpack
+- bootstrap4
 
 ### インフラストラクチャ
 
