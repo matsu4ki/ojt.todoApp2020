@@ -20,6 +20,4 @@ public class Todo extends AbstractEntity{
     private String content;
     private Integer createdUser;
     private Integer updatedUser;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }

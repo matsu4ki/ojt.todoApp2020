@@ -9,6 +9,9 @@
 </head>
 <body>
 
+
+
+
 <header th:include="components/header"></header>
 
 <div class="container">
@@ -17,7 +20,23 @@
       <th:block th:text="${user.username}"/>のTodo
     </h1>
     <div>
-      <a class="btn btn-primary" th:href="@{/create}" >Todoを追加</a>
+      <form method="post" th:action="@{/create}" th:object="${createTodoForm}">
+        <div class="row">
+          <div class="col-3">
+            <label th:for="title" >Title</label>
+            <input th:field="*{title}" type="text" class="form-control" placeholder="title" />
+          </div>
+          <div class="col-9">
+            <label th:for="content">Content</label>
+            <input th:field="*{content}" type="text" class="form-control" placeholder="content" />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <button type="submit" class="btn btn-primary">送信する 👍</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <hr  />
@@ -28,12 +47,15 @@
         <p>TODOを登録してみよう！</p>
       </div>
     </div>
-    <div class="col-6 shadow-sm" th:each="todo : ${todoList}">
-      <div class="card">
+    <div class="col-6" th:each="todo : ${todoList}">
+      <div class="card shadow-sm m-3">
         <div class="card-body">
           <h5 class="card-title" th:text="${todo.title}"></h5>
           <p class="card-text" th:text="${todo.content}"></p>
-          <a href="#" class="float-right btn btn-primary card-link">タスク終了✌️</a>
+          <form method="post" th:action="@{/delete}">
+            <input name="id" type="hidden" th:value="${todo.id}">
+            <button type="submit" class="float-right btn btn-success card-link">タスク終了✌️</button>
+          </form>
         </div>
       </div>
     </div>
