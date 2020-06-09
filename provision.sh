@@ -20,6 +20,7 @@ echo '================== locale setting end =================='
 
 # 時刻の同期を行う
 echo '================== sync time start =================='
+timedatectl set-timezone Asia/Tokyo
 date && chronyc -a makestep && date
 echo '================== sync time end =================='
 
@@ -60,14 +61,20 @@ expect -c "
 spawn mysql -u root -p -e \"CREATE USER 'root'@'%' IDENTIFIED BY 'rootuser'\"
 expect \"Enter password:\"
 send  \"rootuser\n\"
+expect "
+
+#
+expect -c "
 spawn mysql -u root -p -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION\"
 expect \"Enter password:\"
 send  \"rootuser\n\"
 expect "
+
 # create Database
 expect -c "
 spawn mysql -u root -p -e \"CREATE DATABASE if not exists todo\"
 expect \"Enter password:\"
 send  \"rootuser\n\"
+expect "
 
 echo '================== mysql setting end =================='
