@@ -237,6 +237,7 @@ SectionLine "build application"
   yarn install
   yarn build
   ./gradlew build
+  sidp rm -rf /opt/apache-tomcat/webapps/ROOT.*
   sudo mv ./build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
 )
 
