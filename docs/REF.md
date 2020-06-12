@@ -19,7 +19,7 @@ https://start.spring.io/
 ## tomcat9
 
 - 環境変数を指定する
-  - [Tomcat environment variables and run | Tomasz Muras](http://0.0.0.0:4000/2012/06/13/Tomcat-environment-variables-and-run/)
+  - [Tomcat environment variables and run | Tomasz Muras](https://muras.eu/2012/06/13/Tomcat-environment-variables-and-run/)
 
 
 ## SpringSecurity
