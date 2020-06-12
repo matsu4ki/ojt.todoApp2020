@@ -1,3 +1,6 @@
+# 共通の設定をはここに書き込む
+# 環境固有の設定は`application-<env>.yml`に記載する
+# secretKeyは`application-secrets.yml`に記載する
 server:
   port: 8080
 spring:
