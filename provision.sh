@@ -206,6 +206,10 @@ ExecReStart=/opt/apache-tomcat/bin/shutdown.sh;/opt/apache-tomcat/bin/startup.sh
 WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 sudo cat /etc/systemd/system/tomcat.service
 
+SectionLine "setup war file"
+sudo /vagrant/gradlew build
+sudo mv /vagrant/build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
+
 SectionLine "Enable tomcat.service"
 sudo chmod 755 /etc/systemd/system/tomcat.service
 sudo ls -ltar /etc/systemd/system/tomcat.service
