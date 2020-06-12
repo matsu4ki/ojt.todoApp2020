@@ -206,10 +206,6 @@ ExecReStart=/opt/apache-tomcat/bin/shutdown.sh;/opt/apache-tomcat/bin/startup.sh
 WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 sudo cat /etc/systemd/system/tomcat.service
 
-SectionLine "setup war file"
-sudo /vagrant/gradlew build
-sudo mv /vagrant/build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
-
 SectionLine "Enable tomcat.service"
 sudo chmod 755 /etc/systemd/system/tomcat.service
 sudo ls -ltar /etc/systemd/system/tomcat.service
@@ -218,3 +214,33 @@ sudo systemctl enable tomcat.service
 SectionLine "Start tomcat.service"
 sudo systemctl start tomcat.service
 sudo systemctl status tomcat.service
+
+
+############################################################################################
+# Setup Application
+############################################################################################
+SectionLine "install git"
+sudo dnf install -y git
+sudo git clone https://github.com/matsu4ki/ojt.todoApp2020.git
+
+SectionLine "install nodejs"
+sudo dnf install -y nodejs
+node -v
+
+SectionLine "install yarn"
+sudo npm i -g -y yarn
+yarn -v
+
+SectionLine "build application"
+(
+  cd ojt.todoApp2020
+  yarn install
+  yarn build
+  ./gradlew build
+  sudo mv ./build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
+)
+
+SectionLine "Restart tomcat.service"
+sudo systemctl restart tomcat.service
+
+SectionLine "end"
