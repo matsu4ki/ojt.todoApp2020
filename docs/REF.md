@@ -10,11 +10,16 @@ https://start.spring.io/
 - [java - Why is @EnableOAuth2Sso deprecated? - Stack Overflow](https://stackoverflow.com/questions/60742617/why-is-enableoauth2sso-deprecated)
 - [Spring Security で Google の OpenID Connect を利用する - Qiita](https://qiita.com/d-yosh/items/148f9a3249c06dbfae10)
 
-## サーバ
+## centOS8
 
 - [CentOS 7 の初期設定でやっておくべきこと - Qiita](https://qiita.com/bezeklik/items/0622fbaf7d33dd95d005)
 - [Red Hat Enterprise Linux 8 に日本語ロケールを入れる - Qiita](https://qiita.com/michi_h/items/ebf5edd58bbe238ad913)
 - [\[CentOS\] CentOS8.0にMySQL8.0をインストールする](https://vertys.net/centos8-mysql8-install/)
+
+## tomcat9
+
+- 環境変数を指定する
+  - [Tomcat environment variables and run | Tomasz Muras](http://0.0.0.0:4000/2012/06/13/Tomcat-environment-variables-and-run/)
 
 
 ## SpringSecurity
@@ -34,6 +39,7 @@ https://start.spring.io/
 
 ## Gradle
 
+- [Groovyを知らない人のためのbuild.gradle読み書き入門 - Qiita](https://qiita.com/opengl-8080/items/a0bb31fb20cb6505188b)
 - [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/gradle-plugin/reference/html/)
 
 ## SpringSession
