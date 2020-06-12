@@ -183,7 +183,8 @@ sudo ln -s /opt/apache-tomcat/conf /etc/tomcat
 sudo ls -ltar /etc/tomcat
 
 SectionLine "Set Environment"
-echo "export SPRING_PROFILES_ACTIVE=prod" > /opt/apache-tomcat/bin/setup.sh
+echo "export SPRING_PROFILES_ACTIVE=prod" > /opt/apache-tomcat/bin/setenv.sh
+sudo chown tomcat. /opt/apache-tomcat/bin/setenv.sh
 
 SectionLine "Create tomcat.service"
 echo '[Unit]
