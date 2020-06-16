@@ -17,11 +17,17 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private LoginUserDetailsService loginUserDetailsService;
+
+    private final LoginUserDetailsService loginUserDetailsService;
+
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    public WebSecurityConfig(LoginUserDetailsService loginUserDetailsService,
+                             BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.loginUserDetailsService = loginUserDetailsService;
+        this.passwordEncoder = bCryptPasswordEncoder;
+    }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
