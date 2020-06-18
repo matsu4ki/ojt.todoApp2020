@@ -1,7 +1,7 @@
 create table if not exists user (
   id int auto_increment not null,
-  username char(20) not null,
-  password varchar(255) not null,
+  username char(254) not null,
+  password varchar(255),
   role char(20) not null,
   is_enabled boolean not null,
   created_at datetime not null,

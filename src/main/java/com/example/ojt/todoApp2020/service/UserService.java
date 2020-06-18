@@ -25,8 +25,10 @@ public class UserService {
 
     @Transactional
     public void save(User user) {
-        //パスワードをハッシュ化
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        if (!user.getPassword().isEmpty()) {
+            //パスワードをハッシュ化
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+        }
         userRepository.saveAndFlush(user);
     }
 

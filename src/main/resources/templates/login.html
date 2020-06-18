@@ -32,7 +32,7 @@
     </div>
     <div class="ml-2 mr-2">
       <p th:each="url : ${urls}">
-        <a class="btn btn-primary btn-lg btn-block disabled" th:href="${url.value}" th:text="${url.key}" role="button"></a>
+        <a class="btn btn-primary btn-lg btn-block" th:href="${url.value}" th:text="${url.key}" role="button"></a>
       </p>
     </div>
   </div>

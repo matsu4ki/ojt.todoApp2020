@@ -8,3 +8,11 @@ spring:
     username: root
     password: rootuser
     driverClassName: com.mysql.cj.jdbc.Driver
+
+# If you wanna enable logging for springSecurity
+# https://stackoverflow.com/questions/30855252/how-do-i-enable-logging-for-spring-security
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: debug

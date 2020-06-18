@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -22,11 +23,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final BCryptPasswordEncoder passwordEncoder;
 
+    private final OAuth2UserService oAuth2UserService;
+
+    private final Oidc2UserService oidc2UserService;
+
     @Autowired
     public WebSecurityConfig(LoginUserDetailsService loginUserDetailsService,
-                             BCryptPasswordEncoder bCryptPasswordEncoder) {
+                             BCryptPasswordEncoder bCryptPasswordEncoder,
+                             OAuth2UserService oAuth2UserService,
+                             Oidc2UserService oidc2UserService) {
         this.loginUserDetailsService = loginUserDetailsService;
         this.passwordEncoder = bCryptPasswordEncoder;
+        this.oAuth2UserService = oAuth2UserService;
+        this.oidc2UserService = oidc2UserService;
     }
 
     @Override
@@ -42,9 +51,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.csrf().disable();
 
         // ログイン全般の設定
+//        ConcurrencyControlConfigurer
+
+
         http.authorizeRequests()
             .antMatchers("/login", "/signup", "/signup/**").permitAll()
-            .anyRequest().authenticated();
+            .anyRequest().authenticated()
+            .and()
+            .sessionManagement().invalidSessionUrl("/login");
 
         // OAuth2を利用したログイン
         http.oauth2Login()
@@ -52,9 +66,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .defaultSuccessUrl("/")
             .userInfoEndpoint()
             // OAuth認証時に実行するServiceクラス
-            .userService(new OAuth2UserService())
+            .userService(oAuth2UserService)
             // OpenId認証時に実行するServiceクラス
-            .oidcUserService(new Oidc2UserService());
+            .oidcUserService(oidc2UserService);
 
         // フォームを利用したローカルのログイン
         http.formLogin()

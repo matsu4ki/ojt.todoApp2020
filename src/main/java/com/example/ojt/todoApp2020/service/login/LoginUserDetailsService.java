@@ -46,7 +46,7 @@ public class LoginUserDetailsService implements UserDetailsService {
         sessionData.setUser(user);
 
         // ユーザー情報をSpringSecurityに渡す。
-        return new LoginUserDetails(user, getAuthorities(user));
+        return new LoginUserDetails(user, getAuthorities(user),null ,null ,null);
     }
 
     private Collection<GrantedAuthority> getAuthorities(User user) {
