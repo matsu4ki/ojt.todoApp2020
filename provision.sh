@@ -79,6 +79,7 @@ expect \"Reload privilege tables now? (Press y|Y for Yes, any other key for No) 
 send  \"y\n\"
 expect "
 
+
 # mysql user setting
 # 外部からrootで繋げられるようにする
 expect -c "
@@ -87,12 +88,13 @@ expect \"Enter password:\"
 send  \"rootuser\n\"
 expect "
 
-#
+
 expect -c "
 spawn mysql -u root -p -e \"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION\"
 expect \"Enter password:\"
 send  \"rootuser\n\"
 expect "
+
 
 # create Database
 expect -c "
@@ -108,11 +110,13 @@ expect "
 SectionLine "install vim"
 sudo dnf -y install vim
 
+
 ############################################################################################
 # Install tar
 ############################################################################################
 SectionLine "install tar"
 sudo dnf -y install tar
+
 
 ############################################################################################
 # Setup nginx
@@ -139,6 +143,7 @@ SectionLine "Start nginx"
 sudo systemctl start nginx.service
 sudo systemctl status nginx.service
 
+
 ############################################################################################
 # Setup openjdk
 ############################################################################################
@@ -157,12 +162,14 @@ sudo dnf -y install adoptopenjdk-11-hotspot.x86_64
 SectionLine "java version"
 java -version
 
+
 ############################################################################################
 # Setup tomcat
 ############################################################################################
 SectionLine "Useradd tomcat"
 sudo useradd -s /sbin/nologin tomcat
 cat /etc/passwd | grep tomcat
+
 
 SectionLine "install tomcat9"
 cd /tmp
@@ -174,18 +181,22 @@ sudo chown -R tomcat. /opt/apache-tomcat-9.0.36
 sudo ls -ltar /opt/apache-tomcat
 sudo ls -ltar /opt/apache-tomcat-9.0.36
 
+
 SectionLine "Set /etc/profile.d/tomcat.sh"
 sudo echo "export CATALINA_HOME=/opt/apache-tomcat" > /etc/profile.d/tomcat.sh
 sudo cat /etc/profile.d/tomcat.sh
+
 
 SectionLine "Create /etc/tomcat"
 sudo ln -s /opt/apache-tomcat/conf /etc/tomcat
 sudo ls -ltar /etc/tomcat
 
+
 SectionLine "Set Environment"
 echo "export SPRING_PROFILES_ACTIVE=prod" > /opt/apache-tomcat/bin/setenv.sh
 sudo chown tomcat. /opt/apache-tomcat/bin/setenv.sh
 sudo chmod 750 /opt/apache-tomcat/bin/setenv.sh
+
 
 SectionLine "Create tomcat.service"
 echo '[Unit]
@@ -207,10 +218,12 @@ ExecReStart=/opt/apache-tomcat/bin/shutdown.sh;/opt/apache-tomcat/bin/startup.sh
 WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
 sudo cat /etc/systemd/system/tomcat.service
 
+
 SectionLine "Enable tomcat.service"
 sudo chmod 755 /etc/systemd/system/tomcat.service
 sudo ls -ltar /etc/systemd/system/tomcat.service
 sudo systemctl enable tomcat.service
+
 
 SectionLine "Start tomcat.service"
 sudo systemctl start tomcat.service
@@ -224,13 +237,16 @@ SectionLine "install git"
 sudo dnf install -y git
 sudo git clone https://github.com/matsu4ki/ojt.todoApp2020.git
 
+
 SectionLine "install nodejs"
 sudo dnf install -y nodejs
 node -v
 
+
 SectionLine "install yarn"
 sudo npm i -g -y yarn
 yarn -v
+
 
 SectionLine "build application"
 (
@@ -242,7 +258,9 @@ SectionLine "build application"
   sudo mv ./build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
 )
 
+
 SectionLine "Restart tomcat.service"
 sudo systemctl restart tomcat.service
+
 
 SectionLine "end"
