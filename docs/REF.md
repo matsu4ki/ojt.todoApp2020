@@ -9,6 +9,9 @@ https://start.spring.io/
 
 - [java - Why is @EnableOAuth2Sso deprecated? - Stack Overflow](https://stackoverflow.com/questions/60742617/why-is-enableoauth2sso-deprecated)
 - [Spring Security で Google の OpenID Connect を利用する - Qiita](https://qiita.com/d-yosh/items/148f9a3249c06dbfae10)
+- [第3回：Spring Security 5でサポートされたOAuth 2.0 Loginの処理の流れを(深く)理解する - Qiita](https://qiita.com/kazuki43zoo/items/c70549931a4b0bc67757)
+- [Spring Security + OAuthでデータベースを使用しようとしたら思いのほか面倒だった話 - Qiita](https://qiita.com/tasogarei/items/157ee3bbc6a1508116c6)
+- [Spring BootでSNSログイン - Qiita](https://qiita.com/nobi_tum/items/6bf594501b4a722b28ad)
 
 ## centOS8
 
