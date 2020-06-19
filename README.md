@@ -2,8 +2,6 @@
 
 ![loginPage](docs/img/login.png)
 
-[動画](https://youtu.be/VT4441KG_SY)
-
 2020 年の ojt 用に作成するサンプルアプリです。
 枯れた技術をベースに、なるべく新しいものを組み込んでいるつもり。
 
