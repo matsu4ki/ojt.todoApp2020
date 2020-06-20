@@ -25,7 +25,7 @@ public class UserService {
 
     @Transactional
     public void save(User user) {
-        if (!user.getPassword().isEmpty()) {
+        if (user.getPassword() != null) {
             //パスワードをハッシュ化
             user.setPassword(passwordEncoder.encode(user.getPassword()));
         }
