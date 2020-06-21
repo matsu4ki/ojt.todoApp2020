@@ -1,6 +1,7 @@
-# ojt.todoApp2020
+<h1 align="center">ojt.todoApp2020</h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7bc950f1-62e2-4ac4-ab08-664f4e2e5e1b/deploy-status)](https://app.netlify.com/sites/ojt-todoapp2020/deploys)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ![loginPage](docs/img/login.png)
 
