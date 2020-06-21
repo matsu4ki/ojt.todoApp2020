@@ -1,13 +1,9 @@
 # ojt.todoApp2020
 
-![loginPage](docs/img/login.png)
+<img width="70%" src="./img/login.png">
 
 2020 年の ojt 用に作成するサンプルアプリです。
-枯れた技術をベースに、なるべく新しいものを組み込んでいるつもり。
-
-## Build方法
-
-👉 [BUILD.md](docs/build.md)
+枯れた技術をベースに、なるべく新しいものを組み込んでいるつもりで作りました。
 
 ## 使用技術
 
@@ -38,7 +34,3 @@
 - vagrant
 - centos/8
 - mysql8.0.17
-
-## 参考
-
-👉 [REF.md](docs/reference.md)

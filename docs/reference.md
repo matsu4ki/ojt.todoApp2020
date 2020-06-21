@@ -2,8 +2,7 @@
 
 ## プロジェクト作成
 
-Spring Initializr
-https://start.spring.io/
+- [Spring Initializr](https://start.spring.io/)
 
 ## OAuth2
 
