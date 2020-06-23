@@ -11,37 +11,33 @@ Javaは様々な会社から提供されておりますが、
 
 - [Javaの概要](http://www.tohoho-web.com/java/about.htm)
 
-### ダウンロード
-
-- [Amazon Correttoのダウンロードページ](https://aws.amazon.com/jp/corretto/)
-- [直リンク](https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.msi)
+- ダウンロード
+  - [Amazon Correttoのダウンロードページ](https://aws.amazon.com/jp/corretto/)
+  - [直リンク](https://corretto.aws/downloads/latest/amazon-corretto-11-x64-windows-jdk.msi)
 
 ## VirtualBox
 
 仮想サーバーを立てるためのソフトウェアです。
 
-### ダウンロード
-
-- [VirtualBoxのダウンロードページ](https://www.virtualbox.org/wiki/Downloads)
-- [直リンク](https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-Win.exe)
+- ダウンロード
+  - [VirtualBoxのダウンロードページ](https://www.virtualbox.org/wiki/Downloads)
+  - [直リンク](https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-Win.exe)
 
 ## Vagrant
 
 VirtualBoxをCLI上から操作するためのソフトウェア。
 
-### ダウンロード
-
-- [Vagrantのダウンロードページ](https://www.vagrantup.com/downloads.html)
-- [直リンク](https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.msi)
+- ダウンロード
+  - [Vagrantのダウンロードページ](https://www.vagrantup.com/downloads.html)
+  - [直リンク](https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.msi)
 
 ## A5:SQL Mk-2
 
 DataBase(DB)をGUI上で操作できるソフトウェア。
 
-### ダウンロード
-
-- [A5:SQL Mk-2のダウンロードページ](https://a5m2.mmatsubara.com/)
-- [直リンク](https://ftp.vector.co.jp/72/92/2526/a5m2_2.15.0_x64.zip)
+- ダウンロード
+  - [A5:SQL Mk-2のダウンロードページ](https://a5m2.mmatsubara.com/)
+  - [直リンク](https://ftp.vector.co.jp/72/92/2526/a5m2_2.15.0_x64.zip)
 
 ## MySQL
 
@@ -58,10 +54,9 @@ Databaseは仮想環境内に構築するため、本サンプルでのインス
 
 [Gitを使ったバージョン管理｜サル先生のGit入門【プロジェクト管理ツールBacklog】](https://backlog.com/ja/git-tutorial/intro/01/)
 
-### ダウンロード
-
-- [Gitのダウンロードページ](https://git-scm.com/)
-- [直リンク](https://git-scm.com/download/win)
+- ダウンロード
+  - [Gitのダウンロードページ](https://git-scm.com/)
+  - [直リンク](https://git-scm.com/download/win)
 
 ## IntelliJ IDEA CE
 
@@ -69,10 +64,9 @@ JetBrains社が開発したIDEです。
 IDEとは統合開発環境のことで、開発を行う上で必要なものまるっと1つのソフトウェアとして提供されております。
 類似のIDEとして、Eclipseがありますが、本サンプルではこちらを利用します。
 
-### ダウンロード
-
-- [IntelliJ IDEA CEのダウンロードページ](https://www.jetbrains.com/ja-jp/idea/download/#section=windows)
-- [直リンク](https://www.jetbrains.com/ja-jp/idea/download/download-thanks.html?platform=windows&code=IIC)
+- ダウンロード
+  - [IntelliJ IDEA CEのダウンロードページ](https://www.jetbrains.com/ja-jp/idea/download/#section=windows)
+  - [直リンク](https://www.jetbrains.com/ja-jp/idea/download/download-thanks.html?platform=windows&code=IIC)
 
 以下画像に表示されているボタンをクリックして、コミュニティ版をダウンロードしてください。
 ![intellij](img/confirmation/intellij1.png)
@@ -83,10 +77,9 @@ npmを利用するために、Node.jsをインストールします。
 Node.jsをインストールすると、npmも自動的にインストールされます。
 npmとは、フロントエンド周りのパッケージ管理ソフト(ソフトウェアを管理するソフト)のことです。
 
-### ダウンロード
-
-- [Node.jsのダウンロードページ](https://nodejs.org/ja/download/)
-- [直リンク](https://nodejs.org/dist/v12.18.1/node-v12.18.1-x64.msi)
+- ダウンロード
+  - [Node.jsのダウンロードページ](https://nodejs.org/ja/download/)
+  - [直リンク](https://nodejs.org/dist/v12.18.1/node-v12.18.1-x64.msi)
 
 ### yarn
 
@@ -104,7 +97,6 @@ npmを利用してインストールすることが可能です。
 Javaのライブラリ管理ソフトです。
 npmのJavaライブラリ版と考えてもらっても大丈夫です。
 
-### ダウンロード
-
-- [Gradleダウンロードページ](https://gradle.org/releases/)
-- [ダウンロード直リンク](https://gradle.org/next-steps/?version=6.5&format=all)
+- ダウンロード
+  - [Gradleダウンロードページ](https://gradle.org/releases/)
+  - [ダウンロード直リンク](https://gradle.org/next-steps/?version=6.5&format=all)
