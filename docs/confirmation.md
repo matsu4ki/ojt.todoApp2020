@@ -25,7 +25,7 @@ Javaは様々な会社から提供されておりますが、
 
 ## Vagrant
 
-VirtualBoxをCLI上から操作するためのソフトウェア。
+VirtualBoxをCLI上から操作するためのソフトウェアです。
 
 - ダウンロード
   - [Vagrantのダウンロードページ](https://www.vagrantup.com/downloads.html)
@@ -33,7 +33,7 @@ VirtualBoxをCLI上から操作するためのソフトウェア。
 
 ## A5:SQL Mk-2
 
-DataBase(DB)をGUI上で操作できるソフトウェア。
+DataBase(DB)をGUI上で操作できるソフトウェアです。
 
 - ダウンロード
   - [A5:SQL Mk-2のダウンロードページ](https://a5m2.mmatsubara.com/)
@@ -49,7 +49,7 @@ Databaseは仮想環境内に構築するため、本サンプルでのインス
 
 ## Git
 
-バージョン管理を行うためのソフトウェア。
+バージョン管理を行うためのソフトウェアです。
 バージョン管理やGitについては、以下のリンクを参考にしてください。
 
 [Gitを使ったバージョン管理｜サル先生のGit入門【プロジェクト管理ツールBacklog】](https://backlog.com/ja/git-tutorial/intro/01/)
@@ -101,4 +101,9 @@ npmのJavaライブラリ版と考えてもらっても大丈夫です。
 
 - ダウンロード
   - [Gradleダウンロードページ](https://gradle.org/releases/)
-  - [ダウンロード直リンク](https://gradle.org/next-steps/?version=6.5&format=all)
+  - [直リンク](https://gradle.org/next-steps/?version=6.5&format=all)
+
+### Pathを通す
+
+Gradleはインストールウィザードによるインストールがありません。
+なので、手動で使えるようにしてあげる必要があります。
