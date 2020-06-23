@@ -1,4 +1,4 @@
-# How to Build Local Env
+# サンプルアプリを動かす
 
 1. Install Java 11, npm, yarn, vagrant, vurtualBox and Gradle. Gradle is Option.
 <br>(If you don't want to install Gradle, use `./gradlew`).
