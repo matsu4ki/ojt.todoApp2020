@@ -17,10 +17,19 @@
       loadSidebar: true,
       subMaxLevel: 2,
       repo: '',
+      plugins: [
+        EditOnGithubPlugin.create(
+          'https://github.com/matsu4ki/ojt.todoApp2020',
+          null,
+          'edit on GitHub'
+        )
+      ]
     }
   </script>
 
   <!-- 以下プラグイン読み込み -->
+    <!-- GitHubリンクの表示 -->
+    <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
     <!-- 全文検索の追加する -->
     <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!-- 絵文字の追加する -->
