@@ -22,11 +22,11 @@ gradle bootRun --args='--spring.profiles.active=dev'
 
 IntelliJを開き、Open or Importを選択する。
 
-![image](img/build/intellij1.png)
+![image](img/building/intellij1.png)
 
 ロード完了後、以下のPathにあるApplication.javaを開き、下図の▶ボタンを押す。
 
-![image](img/build/intellij2.png)
+![image](img/building/intellij2.png)
 
 ```text
 実行するファイルの保存場所
@@ -40,11 +40,11 @@ src/
                         └── Application.java
 ```
 
-![image](img/build/intellij3.png)
+![image](img/building/intellij3.png)
 
 起動が失敗することを確認する。
 
-![image](img/build/intellij4.png)
+![image](img/building/intellij4.png)
 
 これは、環境をdev環境にしていないことが原因なので、起動時のオプションを設定します。
 
@@ -52,4 +52,4 @@ src/
 !>環境を分けている理由としては、実際に動作させるときと、ローカルで動かすときなどでシステムの配置や設定が変わってくるからです。
 !>一般的には、「dev(development)環境、stg(staging)環境、prod(production)環境」が存在します。
 
-![image](img/build/intellij5.png)
+![image](img/building/intellij5.png)
