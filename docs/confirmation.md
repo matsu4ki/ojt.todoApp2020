@@ -64,12 +64,14 @@ JetBrains社が開発したIDEです。
 IDEとは統合開発環境のことで、開発を行う上で必要なものまるっと1つのソフトウェアとして提供されております。
 類似のIDEとして、Eclipseがありますが、本サンプルではこちらを利用します。
 
+以下画像に表示されているボタンをクリックして、コミュニティ版をダウンロードしてください。
+
+![intellij](img/confirmation/intellij1.png)
+
 - ダウンロード
   - [IntelliJ IDEA CEのダウンロードページ](https://www.jetbrains.com/ja-jp/idea/download/#section=windows)
   - [直リンク](https://www.jetbrains.com/ja-jp/idea/download/download-thanks.html?platform=windows&code=IIC)
 
-以下画像に表示されているボタンをクリックして、コミュニティ版をダウンロードしてください。
-![intellij](img/confirmation/intellij1.png)
 
 ## Node.js
 
