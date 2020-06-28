@@ -193,7 +193,7 @@ sudo ls -ltar /etc/tomcat
 
 
 SectionLine "Set Environment"
-echo "export SPRING_PROFILES_ACTIVE=prod" > /opt/apache-tomcat/bin/setenv.sh
+echo "export SPRING_PROFILES_ACTIVE=dev"  > /opt/apache-tomcat/bin/setenv.sh
 sudo chown tomcat. /opt/apache-tomcat/bin/setenv.sh
 sudo chmod 750 /opt/apache-tomcat/bin/setenv.sh
 
@@ -231,11 +231,10 @@ sudo systemctl status tomcat.service
 
 
 ############################################################################################
-# Setup Application
+# Setup Application tools
 ############################################################################################
 SectionLine "install git"
 sudo dnf install -y git
-sudo git clone https://github.com/matsu4ki/ojt.todoApp2020.git
 
 
 SectionLine "install nodejs"
@@ -246,21 +245,6 @@ node -v
 SectionLine "install yarn"
 sudo npm i -g -y yarn
 yarn -v
-
-
-SectionLine "build application"
-(
-  cd ojt.todoApp2020
-  yarn install
-  yarn build
-  ./gradlew build
-  sudo rm -rf /opt/apache-tomcat/webapps/ROOT.*
-  sudo mv ./build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
-)
-
-
-SectionLine "Restart tomcat.service"
-sudo systemctl restart tomcat.service
 
 
 SectionLine "end"
