@@ -1,4 +1,4 @@
-# サンプルアプリを動かす
+# サンプルアプリを動かしてみる
 
 1. Step0 にて指定した各種ソフトウェアをインストールする
 2. Git を使って、Repository から clone を行う。<br>`git clone https://github.com/matsu4ki/ojt.todoApp2020.git`
@@ -21,6 +21,7 @@ gradle bootRun --args='--spring.profiles.active=dev'
 ## IntelliJ上でサーバーを起動する
 
 IntelliJ を開き、Open or Import を選択する。
+ウィンドウが出てくるので、`git clone`にてダウンロードしたプロジェクトファイルを指定する。
 
 ![image](img/building/intellij1.png)
 
@@ -51,3 +52,6 @@ src/
 !>プロジェクトには基本的に、複数の環境が存在します。環境を分けている理由としては、実際に動作させるときと、ローカルで動かすときなどでシステムの配置や設定が変わってくるからです。一般的には、「dev(development)環境、stg(staging)環境、prod(production)環境」が存在します。
 
 ![image](img/building/intellij5.png)
+
+
+![image](img/building/intellij6.png)
