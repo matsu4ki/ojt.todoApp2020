@@ -235,8 +235,7 @@ sudo systemctl status tomcat.service
 ############################################################################################
 SectionLine "install git"
 sudo dnf install -y git
-sudo git clone https://github.com/matsu4ki/ojt.todoApp2020.git
-
+git --version
 
 SectionLine "install nodejs"
 sudo dnf install -y nodejs
@@ -246,21 +245,3 @@ node -v
 SectionLine "install yarn"
 sudo npm i -g -y yarn
 yarn -v
-
-
-SectionLine "build application"
-(
-  cd ojt.todoApp2020
-  yarn install
-  yarn build
-  ./gradlew build
-  sudo rm -rf /opt/apache-tomcat/webapps/ROOT.*
-  sudo mv ./build/libs/ojt.todoApp2020-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/ROOT.war
-)
-
-
-SectionLine "Restart tomcat.service"
-sudo systemctl restart tomcat.service
-
-
-SectionLine "end"
