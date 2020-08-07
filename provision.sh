@@ -193,7 +193,7 @@ sudo ls -ltar /etc/tomcat
 
 
 SectionLine "Set Environment"
-echo "export SPRING_PROFILES_ACTIVE=prod" > /opt/apache-tomcat/bin/setenv.sh
+echo "export SPRING_PROFILES_ACTIVE=dev"  > /opt/apache-tomcat/bin/setenv.sh
 sudo chown tomcat. /opt/apache-tomcat/bin/setenv.sh
 sudo chmod 750 /opt/apache-tomcat/bin/setenv.sh
 
@@ -231,11 +231,12 @@ sudo systemctl status tomcat.service
 
 
 ############################################################################################
-# Setup Application
+# Setup Application tools
 ############################################################################################
 SectionLine "install git"
 sudo dnf install -y git
 git --version
+
 
 SectionLine "install nodejs"
 sudo dnf install -y nodejs
@@ -245,3 +246,6 @@ node -v
 SectionLine "install yarn"
 sudo npm i -g -y yarn
 yarn -v
+
+
+SectionLine "end"

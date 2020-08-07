@@ -34,7 +34,7 @@
 
 - [【Spring Data JPA】自動実装されるメソッドの命名ルール - Qiita](https://qiita.com/shindo_ryo/items/af7d12be264c2cc4b252)
 
-## Entity
+## エンティティ
 
 - [@GeneratedValueを使って主キーを生成する方法 - Qiita](https://qiita.com/KevinFQ/items/a6d92ec7b32911e50ffe)
 - [Spring JPAでCreatedTimeとUpdatedTimeを自動設定する | エンジニアっぽいことを書くブログ](https://ishiis.net/2017/09/08/spring-jpa-auto-generate-data/)
