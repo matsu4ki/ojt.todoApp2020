@@ -34,3 +34,4 @@
 - vagrant
 - centos/8
 - mysql8.0.17
+- Buddy(CI/CD)
